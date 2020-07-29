@@ -1,27 +1,27 @@
-# Enigmafunctionnal
+# EncryptionDecryptionofEnigmaMachine
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.
+ 	Objectif
+During World War II, the Germans were using an encryption code called Enigma – which was basically an encryption machine that encrypted messages for transmission. The Enigma code went many years unbroken. Here's How the basic machine works:
 
-## Development server
+First Caesar shift is applied using an incrementing number:
+If String is AAA and starting number is 4 then output will be EFG.
+A + 4 = E
+A + 4 + 1 = F
+A + 4 + 1 + 1 = G
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Now map EFG to first ROTOR such as:
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+BDFHJLCPRTXVZNYEIWGAKMUSQO
+So EFG becomes JLC. Then it is passed through 2 more rotors to get the final value.
 
-## Code scaffolding
+If the second ROTOR is AJDKSIRUXBLHWTMCQGZNPYFVOE, we apply the substitution step again thus:
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+AJDKSIRUXBLHWTMCQGZNPYFVOE
+So JLC becomes BHD.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+If the third ROTOR is EKMFLGDQVZNTOWYHXUSPAIBRCJ, then the final substitution is:
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+EKMFLGDQVZNTOWYHXUSPAIBRCJ
+So BHD becomes KQF.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Final output is sent via Radio Transmitter.
